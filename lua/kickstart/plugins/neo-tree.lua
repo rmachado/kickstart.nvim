@@ -13,13 +13,19 @@ return {
   keys = {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
-  opts = {
-    filesystem = {
-      window = {
-        mappings = {
-          ['\\'] = 'close_window',
+  config = function()
+    require('neo-tree').setup {
+      source_selector = {
+        winbar = true,
+        statusline = false,
+      },
+      filesystem = {
+        window = {
+          mappings = {
+            ['\\'] = 'close_window',
+          },
         },
       },
-    },
-  },
+    }
+  end,
 }
