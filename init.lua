@@ -836,20 +836,21 @@ require('lazy').setup({
     -- 'lunarvim/synthwave84.nvim',
     'folke/tokyonight.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
-    -- config = function()
-    --   require('tokyonight').setup {
-    --     glow = {
-    --       error_msg = true,
-    --       type2 = true,
-    --       func = true,
-    --       keyword = true,
-    --       operator = false,
-    --       buffer_current_target = true,
-    --       buffer_visible_target = true,
-    --       buffer_inactive_target = true,
-    --     },
-    --   }
-    -- end,
+    config = function()
+      require('tokyonight').setup {
+        transparent = vim.g.transparent_enabled,
+        --     glow = {
+        --       error_msg = true,
+        --       type2 = true,
+        --       func = true,
+        --       keyword = true,
+        --       operator = false,
+        --       buffer_current_target = true,
+        --       buffer_visible_target = true,
+        --       buffer_inactive_target = true,
+        --     },
+      }
+    end,
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
