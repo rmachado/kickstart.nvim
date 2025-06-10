@@ -293,7 +293,7 @@ do
     end
   end
 
-  -- This autocommand runs after a plugin is installed or updated and
+-- This autocommand runs after a plugin is installed or updated and
   --  runs the appropriate build command for that plugin if necessary.
   --
   -- See `:help vim.pack-events`
@@ -385,9 +385,11 @@ do
   -- change the command under that to load whatever the name of that colorscheme is.
   --
   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+  vim.g.transparent_enabled = true
   vim.pack.add { gh 'folke/tokyonight.nvim' }
   ---@diagnostic disable-next-line: missing-fields
   require('tokyonight').setup {
+    transparent = vim.g.transparent_enabled,
     styles = {
       comments = { italic = false }, -- Disable italics in comments
     },
