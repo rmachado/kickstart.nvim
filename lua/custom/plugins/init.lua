@@ -11,3 +11,16 @@ for file_name, type in vim.fs.dir(plugins_dir, { follow = true }) do
     require('custom.plugins.' .. module)
   end
 end
+
+-- Personal options
+vim.o.relativenumber = true
+
+-- Personal keymaps
+require 'custom.keymaps'
+
+-- Enable optional kickstart example plugins (see "SECTION 10" of init.lua)
+require 'kickstart.plugins.debug'
+require 'kickstart.plugins.indent_line'
+require 'kickstart.plugins.lint'
+require 'kickstart.plugins.autopairs'
+require 'kickstart.plugins.gitsigns'

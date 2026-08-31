@@ -1,10 +1,7 @@
-return {
-  "akinsho/bufferline.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
-  version = "*",
-  opts = {
-    options = {
-      mode = "tabs",
-    },
+vim.pack.add { { src = 'https://github.com/akinsho/bufferline.nvim', version = vim.version.range '*' } }
+
+require('bufferline').setup {
+  options = {
+    mode = 'tabs',
   },
 }
