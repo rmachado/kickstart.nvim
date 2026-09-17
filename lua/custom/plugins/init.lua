@@ -19,6 +19,9 @@ vim.o.relativenumber = true
 -- Personal keymaps
 require 'custom.keymaps'
 
+-- AI-written commit messages (<leader>ai inside a commit buffer).
+require 'custom.commit_ai'
+
 -- Enable optional kickstart example plugins (see "SECTION 10" of init.lua).
 -- NOTE: `kickstart.plugins.gitsigns` is intentionally not required here:
 -- upstream now enables gitsigns.nvim and its recommended keymaps by default.
