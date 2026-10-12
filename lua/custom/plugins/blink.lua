@@ -6,7 +6,7 @@ local blink_cmp = require 'blink.cmp.config'
 blink_cmp.merge_with {
   keymap = {
     preset = 'enter',
-    ['<Tab>'] = { 'select_next' },
-    ['<S-Tab>'] = { 'select_prev' },
+    ['<Tab>'] = { 'select_next', 'fallback' },
+    ['<S-Tab>'] = { 'select_prev', 'fallback' },
   },
 }
