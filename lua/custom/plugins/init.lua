@@ -3,6 +3,16 @@
 --
 -- See the kickstart.nvim README for more information
 
+-- Enable optional kickstart example plugins first (see "SECTION 10" of init.lua)
+-- so that files in this directory can override their defaults (e.g. the
+-- nvim-lint linters_by_ft table set by `kickstart.plugins.lint`).
+-- NOTE: `kickstart.plugins.gitsigns` is intentionally not required here:
+-- upstream now enables gitsigns.nvim and its recommended keymaps by default.
+require 'kickstart.plugins.debug'
+require 'kickstart.plugins.indent_line'
+require 'kickstart.plugins.lint'
+require 'kickstart.plugins.autopairs'
+
 -- Iterate over all Lua files in the plugins directory and load them.
 -- `vim.fs.dir()` iteration order is unspecified and must not be relied upon.
 local plugins_dir = vim.fs.joinpath(vim.fn.stdpath 'config', 'lua', 'custom', 'plugins')
@@ -21,11 +31,3 @@ require 'custom.keymaps'
 
 -- AI-written commit messages (<leader>ai inside a commit buffer).
 require 'custom.commit_ai'
-
--- Enable optional kickstart example plugins (see "SECTION 10" of init.lua).
--- NOTE: `kickstart.plugins.gitsigns` is intentionally not required here:
--- upstream now enables gitsigns.nvim and its recommended keymaps by default.
-require 'kickstart.plugins.debug'
-require 'kickstart.plugins.indent_line'
-require 'kickstart.plugins.lint'
-require 'kickstart.plugins.autopairs'
